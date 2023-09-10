@@ -4,7 +4,7 @@
         "outDir": "./dist/js", // pasta que vai fica os arquivos js gerados
         "noEmitOnError": true, // só vai gerar o arquivo se não tiver error nenhum apontado pelo typescript
     },
-    "exclude": [
+    "include": [
         "./src/**/*", // vai olhar os arquivos ts dentro desta pasta é fazer a compilação
     ]
 }

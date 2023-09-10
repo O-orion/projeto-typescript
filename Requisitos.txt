@@ -6,3 +6,6 @@
 * Sempre que a transação for do tipo DEPÓSITO, o valor da transação deve ser adicionado ao saldo da conta.
 * Sempre que a transação for do tipo TRANSFERÊNCIA ou PAGAMENTO DE BOLETO, o valor da transação deve ser subtraído do saldo da conta.
 * O saldo deve sempre ser atualizado na tela da aplicação a cada transação realizada.
+
+
+tsc -w typescript fica escutando modificações nos arquivos ts na pasta configurada no tsconfig
