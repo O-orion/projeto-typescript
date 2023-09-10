@@ -12,26 +12,26 @@ lista.push('4')
 /* lista.push(4)
 lista.push(true) */
 
-// Tipos personalizados (Types  Alias)
+/*Tipos personalizados (Types  Alias)
 type transacao = {
     tipo: tipoTransacao;
     data: Date;
     valor: number;
-} // explicitando o que uma transação deve conter.
+}  explicitando o que uma transação deve conter. */
 
 // Enum
-
+/*
 enum tipoTransacao {
     DEPOSITO = 'Depósito',
     TRANSFERENCIA = 'Transferência',
     PAGAMENTO_BOLETO = 'Pagamento de Boleto'
-}
+} */
 
-// Criando um objeto do tipo transacao
+/*Criando um objeto do tipo transacao
 const newTransacao: transacao = { 
     'tipo': tipoTransacao.DEPOSITO,
     'data': new Date(),
     'valor': 500
-}
+} */
 
 // Enums são um conjunto de valores fixos definidos no codigo.
