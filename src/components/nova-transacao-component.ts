@@ -10,22 +10,20 @@ elementoFormulario.addEventListener("submit", function(event) {
     const inputValor = elementoFormulario.querySelector("#valor") as HTMLInputElement;
     const inputData = elementoFormulario.querySelector("#data") as HTMLInputElement;
 
-    let tipoTransacao: string = inputTipoTransacao.value as TipoTransacao;
+    let tipoTransacao: TipoTransacao = inputTipoTransacao.value as TipoTransacao;
     let valor: number = inputValor.valueAsNumber;
     let data: Date = new Date(inputData.value);
 
     if (tipoTransacao == TipoTransacao.DEPOSITO) {
         saldo += valor;
-
     } else if (tipoTransacao == TipoTransacao.TRANSFERENCIA || tipoTransacao == TipoTransacao.PAGAMENTO_BOLETO) {
         saldo -= valor;
-
     } else {
         alert("Tipo de Transação é inválido!");
         return;
     }
 
-    elementoSaldo.textContent = saldo.toLocaleString('pt-br', {currency: 'BRL', style: 'currency'});
+    elementoSaldo.textContent = formatarMoeda(saldo);
 
     const novaTransacao: Transacao = {
         tipoTransacao: tipoTransacao,
@@ -33,6 +31,6 @@ elementoFormulario.addEventListener("submit", function(event) {
         data: data
     };
 
-
+    console.log(novaTransacao);
     elementoFormulario.reset();
 });
