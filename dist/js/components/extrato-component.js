@@ -2,6 +2,7 @@ import Conta from "../types/Conta.js";
 import { FormatoData } from "../types/FormatoData";
 import { formatarData, formatarMoeda } from '../utils/formatters';
 const elementoRegistroTransacao = document.querySelector('.extrato .registro-transacoes');
+renderizarExtrato();
 function renderizarExtrato() {
     const gruposTransacoes = Conta.getGruposTransacoes();
     // limpando todo o elemento do extrato

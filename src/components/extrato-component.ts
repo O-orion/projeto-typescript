@@ -5,6 +5,7 @@ import { formatarData, formatarMoeda } from '../utils/formatters';
 
 const elementoRegistroTransacao = document.querySelector('.extrato .registro-transacoes');
 
+renderizarExtrato()
 function renderizarExtrato(): void {
     const gruposTransacoes: GrupoTransacao[] = Conta.getGruposTransacoes();
 
@@ -38,7 +39,7 @@ function renderizarExtrato(): void {
     if(htmlRegistroTransacoes === ""){
         htmlRegistroTransacoes = "<div>Não há transações registradas!</div>"
     }
-    
+
     elementoRegistroTransacao.innerHTML = htmlRegistroTransacoes;
 
 }
