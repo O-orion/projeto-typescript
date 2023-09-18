@@ -1,6 +1,6 @@
 import Conta from "../types/Conta.js";
-import { FormatoData } from "../types/FormatoData";
-import { formatarData, formatarMoeda } from '../utils/formatters';
+import { FormatoData } from "../types/FormatoData.js";
+import { formatarData, formatarMoeda } from '../utils/formatters.js';
 const elementoRegistroTransacao = document.querySelector('.extrato .registro-transacoes');
 renderizarExtrato();
 function renderizarExtrato() {
@@ -33,3 +33,9 @@ function renderizarExtrato() {
     }
     elementoRegistroTransacao.innerHTML = htmlRegistroTransacoes;
 }
+const ExtratoComponente = {
+    atualizar() {
+        renderizarExtrato();
+    }
+};
+export default ExtratoComponente;
