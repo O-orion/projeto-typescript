@@ -1,17 +1,31 @@
 import { TipoTransacao } from './TipoTransacao.js';
 let saldo = 300;
+function debitar(valor) {
+    if (valor <= 0) {
+        throw new Error("O valor a ser debitado deve ser maior que zero!");
+    }
+    if (valor > saldo) {
+        throw new Error("O valor a ser debitado deve ser maior do que seu saldo atual!");
+    }
+    saldo -= valor;
+}
+function depositar(valor) {
+    if (valor <= 0) {
+        throw new Error("O valor a ser depositado deve ser maior que zero!");
+    }
+}
 const Conta = {
     getSaldo() { return saldo; },
     getDataAcesso() { return new Date(); },
     registrarTransacao(novaTransacao) {
         if (novaTransacao.tipoTransacao == TipoTransacao.DEPOSITO) {
-            saldo += novaTransacao.valor;
+            depositar(novaTransacao.valor);
         }
         else if (novaTransacao.tipoTransacao == TipoTransacao.TRANSFERENCIA || novaTransacao.tipoTransacao == TipoTransacao.PAGAMENTO_BOLETO) {
-            saldo -= novaTransacao.valor;
+            debitar(novaTransacao.valor);
         }
         else {
-            alert("Tipo de Transação é inválido!");
+            throw new Error("Tipo de Transação é inválido!");
             return;
         }
     }
